@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import Navbar from "../../components/Navbar";
-import {ArrowRight, ArrowUpRight, Clock, Layers} from "lucide-react";
+import {ArrowRight, ArrowUpRight, Clock, Layers, X} from "lucide-react";
 import Button from "../../components/ui/Button";
 import Upload from "../../components/Upload";
 import {useNavigate} from "react-router";
@@ -9,8 +9,8 @@ import {createProject, getProjects} from "../../lib/puter.action";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Roomly | AI-powered Architectural Visualization" },
+    { name: "description", content: "Transform 2D floor plans into photorealistic 3D renders with Roomly." },
   ];
 }
 
@@ -18,6 +18,7 @@ export default function Home() {
     const navigate = useNavigate();
     const [projects, setProjects] = useState<DesignItem[]>([]);
     const isCreatingProjectRef = useRef(false);
+    const [showDemo, setShowDemo] = useState(false);
 
     const handleUploadComplete = async (base64Image: string) => {
         try {
@@ -67,6 +68,7 @@ export default function Home() {
     }, []);
 
   return (
+      <>
       <div className="home">
           <Navbar />
 
@@ -90,7 +92,7 @@ export default function Home() {
                       Start Building <ArrowRight className="icon" />
                   </a>
 
-                  <Button variant="outline" size="lg" className="demo">
+                  <Button variant="outline" size="lg" className="demo" onClick={() => setShowDemo(true)}>
                       Watch Demo
                   </Button>
               </div>
@@ -154,5 +156,32 @@ export default function Home() {
               </div>
           </section>
       </div>
+
+      {showDemo && (
+          <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+              onClick={() => setShowDemo(false)}
+          >
+              <div
+                  className="relative w-full max-w-3xl mx-4 rounded-xl overflow-hidden shadow-2xl"
+                  onClick={(e) => e.stopPropagation()}
+              >
+                  <button
+                      onClick={() => setShowDemo(false)}
+                      className="absolute top-3 right-3 z-10 bg-black/50 hover:bg-black/80 text-white rounded-full p-1 transition"
+                      aria-label="Close demo"
+                  >
+                      <X size={20} />
+                  </button>
+                  <video
+                      src="/roomly.mp4"
+                      controls
+                      autoPlay
+                      className="w-full block"
+                  />
+              </div>
+          </div>
+      )}
+  </>
   )
 }
