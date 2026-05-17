@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/badge/-Gemini-4285F4?style=for-the-badge&logo=Google-Gemini&logoColor=white" />
   </div>
 
-  <h3 align="center">Roomify | AI-powered Architectural Visualization App</h3>
+  <h3 align="center">Roomly | AI-powered Architectural Visualization App</h3>
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
@@ -36,9 +36,9 @@ AI-powered architectural visualization app built with React, TypeScript, and Put
 
 - **[TailwindCSS](https://tailwindcss.com/)** is a utility-first CSS framework that allows for rapid UI development by applying pre-defined classes directly in your markup.
 
-- **[Puter](https://jsm.dev/roomify-puter)** is the underlying cloud computing platform and "Internet OS" that provides the infrastructure; including serverless Workers, permanent file storage, key-value (KV) databases, and hosted AI models.
+- **[Puter](https://puter.com)** is the underlying cloud computing platform and "Internet OS" that provides the infrastructure; including serverless Workers, permanent file storage, key-value (KV) databases, and hosted AI models.
 
-- **[Puter.js](https://jsm.dev/roomify-puterjs)** is the official JavaScript SDK that allows developers to interact with those cloud services directly from the frontend.
+- **[Puter.js](https://docs.puter.com/sdk/)** is the official JavaScript SDK that allows developers to interact with those cloud services directly from the frontend.
 
 - **[Claude](https://www.anthropic.com/claude)** and **[Gemini](https://deepmind.google/technologies/gemini/)** are state-of-the-art large language models used to power the architectural transformation and image generation logic within the application.
 
@@ -77,8 +77,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/M31i55a/roomify
-cd roomify
+git clone https://github.com/M31i55a/roomly
+cd roomly
 ```
 
 **Installation**
