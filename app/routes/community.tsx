@@ -32,23 +32,23 @@ export default function Community() {
       <Navbar />
 
       <section className="hero" style={{ paddingBottom: "2rem" }}>
-        <div className="announce">
+        <div className="announce" data-animate>
           <div className="dot">
             <div className="pulse"></div>
           </div>
           <p>Community Gallery</p>
         </div>
 
-        <h1>See what others are building with Roomly</h1>
+        <h1 data-animate data-delay="100">See what others are building with Roomly</h1>
 
-        <p className="subtitle">
+        <p className="subtitle" data-animate data-delay="200">
           Explore photorealistic renders shared by designers and architects around the world. Get inspired, then build your own.
         </p>
       </section>
 
       <section className="projects">
         <div className="section-inner">
-          <div className="section-head">
+          <div className="section-head" data-animate>
             <div className="copy">
               <h2>Public Renders</h2>
               <p>Latest architectural visualizations from the community.</p>
@@ -84,6 +84,7 @@ export default function Community() {
                 <div
                   key={id}
                   className="project-card group"
+                  data-animate
                   onClick={() => navigate(`/visualizer/${id}`)}
                 >
                   <div className="preview">

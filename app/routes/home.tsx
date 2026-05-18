@@ -73,7 +73,7 @@ export default function Home() {
           <Navbar />
 
           <section className="hero">
-              <div className="announce">
+              <div className="announce" data-animate>
                   <div className="dot">
                       <div className="pulse"></div>
                   </div>
@@ -81,13 +81,13 @@ export default function Home() {
                   <p>Introducing Roomly 2.0</p>
               </div>
 
-              <h1>Build beautiful spaces at the speed of thought with Roomly</h1>
+              <h1 data-animate data-delay="100">Build beautiful spaces at the speed of thought with Roomly</h1>
 
-              <p className="subtitle">
+              <p className="subtitle" data-animate data-delay="200">
                   Roomly is an AI-first design environment that helps you visualize, render, and ship architectural projects faster than ever.
               </p>
 
-              <div className="actions">
+              <div className="actions" data-animate data-delay="300">
                   <a href="#upload" className="cta">
                       Start Building <ArrowRight className="icon" />
                   </a>
@@ -97,7 +97,7 @@ export default function Home() {
                   </Button>
               </div>
 
-              <div id="upload" className="upload-shell">
+              <div id="upload" className="upload-shell" data-animate data-delay="400">
                 <div className="grid-overlay" />
 
                   <div className="upload-card">
@@ -117,7 +117,7 @@ export default function Home() {
 
           <section className="projects">
               <div className="section-inner">
-                  <div className="section-head">
+                  <div className="section-head" data-animate>
                       <div className="copy">
                           <h2>Projects</h2>
                           <p>Your latest work and shared community projects, all in one place.</p>
@@ -126,7 +126,7 @@ export default function Home() {
 
                   <div className="projects-grid">
                       {projects.map(({id, name, renderedImage, sourceImage, timestamp}) => (
-                          <div key={id} className="project-card group" onClick={() => navigate(`/visualizer/${id}`)}>
+                          <div key={id} className="project-card group" data-animate onClick={() => navigate(`/visualizer/${id}`)}>
                               <div className="preview">
                                   <img  src={renderedImage || sourceImage} alt="Project"
                                   />

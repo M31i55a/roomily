@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -25,7 +26,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap",
   },
 ];
 
@@ -55,6 +56,31 @@ const DEFAULT_AUTH_STATE: AuthState = {
 
 export default function App() {
     const [authState, setAuthState] = useState<AuthState>(DEFAULT_AUTH_STATE);
+    const location = useLocation();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const els = document.querySelectorAll<HTMLElement>('[data-animate]:not(.in-view)');
+            if (!els.length) return;
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+            );
+
+            els.forEach((el) => observer.observe(el));
+            return () => observer.disconnect();
+        }, 60);
+
+        return () => clearTimeout(timer);
+    }, [location.pathname]);
 
     const refreshAuth = async () => {
         try {

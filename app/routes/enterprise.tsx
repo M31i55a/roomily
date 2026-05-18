@@ -54,20 +54,20 @@ export default function Enterprise() {
 
       {/* Hero */}
       <section className="hero" style={{ paddingBottom: "2rem" }}>
-        <div className="announce">
+        <div className="announce" data-animate>
           <div className="dot">
             <div className="pulse"></div>
           </div>
           <p>Roomly for Enterprise</p>
         </div>
 
-        <h1>AI visualization, built for teams</h1>
+        <h1 data-animate data-delay="100">AI visualization, built for teams</h1>
 
-        <p className="subtitle">
+        <p className="subtitle" data-animate data-delay="200">
           Give your entire architecture or interior design team access to Roomly's AI rendering engine — with the security, scale, and support that enterprises require.
         </p>
 
-        <div className="actions">
+        <div className="actions" data-animate data-delay="300">
           <a href="#contact" className="cta">
             Talk to Sales <ArrowRight className="icon" />
           </a>
@@ -75,7 +75,7 @@ export default function Enterprise() {
       </section>
 
       {/* Features */}
-      <section className="projects">
+      <section className="projects projects--dark">
         <div className="section-inner">
           <div className="section-head">
             <div className="copy">
@@ -86,7 +86,7 @@ export default function Enterprise() {
 
           <div className="projects-grid">
             {FEATURES.map(({ icon: Icon, title, description }) => (
-              <div key={title} className="project-card" style={{ cursor: "default" }}>
+              <div key={title} className="project-card" data-animate style={{ cursor: "default" }}>
                 <div className="card-body" style={{ flexDirection: "column", alignItems: "flex-start", gap: "0.75rem" }}>
                   <div
                     style={{
@@ -102,7 +102,7 @@ export default function Enterprise() {
                     <Icon size={22} className="text-primary" />
                   </div>
                   <h3 style={{ marginBottom: "0.25rem" }}>{title}</h3>
-                  <p style={{ fontSize: "0.875rem", color: "#6b7280", lineHeight: 1.6 }}>{description}</p>
+                  <p style={{ fontSize: "0.875rem", color: "#ffffff", lineHeight: 1.6 }}>{description}</p>
                 </div>
               </div>
             ))}
