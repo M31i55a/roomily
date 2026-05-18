@@ -22,6 +22,16 @@
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
 
+> [!WARNING]
+> **A free [Puter](https://puter.com) account is required to use this app.**
+> Puter powers all backend functionality — AI rendering, file storage, and project saving. Without signing in:
+>
+> - Uploading an image will silently fail (nothing happens after you drop a file)
+> - AI rendering will not run
+> - Your projects will not be saved or listed
+>
+> Sign up at [puter.com](https://puter.com) — it's free. Once you have an account, click **Sign In** in the top-right corner of the app before uploading.
+
 ## <a name="introduction">✨ Introduction</a>
 
 AI-powered architectural visualization app built with React, TypeScript, and Puter. Use AI models from Claude to Gemini to transform 2D floor plans into photorealistic 3D renders with permanent hosting and persistent metadata. Features include 2D-to-3D photorealistic rendering, serverless workers, high-performance KV storage, and a global community feed.
