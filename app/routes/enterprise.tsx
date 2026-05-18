@@ -111,7 +111,7 @@ export default function Enterprise() {
       </section>
 
       {/* Contact form */}
-      <section id="contact" className="projects" style={{ paddingTop: 0 }}>
+      <section id="contact" className="projects">
         <div className="section-inner" style={{ maxWidth: 600 }}>
           <div className="section-head">
             <div className="copy">

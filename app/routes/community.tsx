@@ -31,7 +31,7 @@ export default function Community() {
     <div className="home">
       <Navbar />
 
-      <section className="hero" style={{ paddingBottom: "2rem" }}>
+      <section className="hero" style={{ minHeight: "100vh", justifyContent: "center", paddingBottom: "2rem" }}>
         <div className="announce" data-animate>
           <div className="dot">
             <div className="pulse"></div>
