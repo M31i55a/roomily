@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-  <img src="public/readme/readme-hero.webp" alt="Project Banner">
+  <img src="public/readme/readme-hero.png" alt="Project Banner">
   <br />
 
   <div>
